@@ -6,16 +6,27 @@ num1 = 5
 num2 = 10
 # Write the code here: Print the sum of num1 and num2.
 
+
+# Write the code here: Print the difference between num1 and num2.
+
+# Write the code here: Print the product of num1 and num2.
+
+# Write the code here: Print the quotient of num2 divided by num1.
+
+# Write the code here: Print the remainder of num2 divided by num1.
+
 # ===========================
 # 2. Datatypes Practice
 # ===========================
 # Problem: Assign various datatypes to variables and print their types.
-var_int = 42
+var_int = 13
 var_float = 3.14
-var_str = "Hello, Python!"
+var_str = "Hello, Ian!"
 var_bool = True
 
 # Write the code here: Print the type of each variable.
+
+# Write the code here: Print "Hello, Ian! Are you 13 years old?" without using constants
 
 # ===========================
 # 3. Type Casting Practice
