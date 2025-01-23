@@ -107,14 +107,20 @@ for i in range(len(numbers)):
 # # 4. Calculate the Sum and Average of a List
 # # Write a program to calculate the sum and average of the values in a list.
 # # edit total and average
-# number = [10, 20, 30, 40, 50]
-# total = 0
-# average = 0
-# # Calculate the sum of the numbers
-# total = sum(number)
-#
-# # Calculate the average by dividing the total by the number of elements in the list
-# average = total / len(number) if len(number) > 0 else 0  # Handling division by zero if the list is empty
+number = [10, 20, 30, 40, 50]
+total = 0
+average = 0
+# Calculate the sum of the numbers
+for i in range(len(numbers)):
+    total += numbers[i]
+
+if len(numbers) > 0:
+    average = total / len(numbers)
+# Before starting the loop you initialize both variable as 0 then after that the after that you go every single index. Then each time you go through an index you add the value to the total.
+# Then lastly you divide the total by the length of the numbers then you get the average.
+# Print the results
+print("Total:", total)
+print("Average:", average)
 #
 # print("Sum:", total)
 # print("Average:", average)
@@ -129,17 +135,38 @@ for i in range(len(numbers)):
 #     if number not in unique_numbers:
 #         unique_numbers.append(number)
 # print("List without duplicates:", unique_numbers)
-#
-#
-# # 6. Find the Most Frequent Value in a List
-# # Write a program to find the most frequent value and its count in a list.
-# n = [10, 20, 20, 30, 30, 30, 40]
-#
-# count_10 = 0
-# count_20 = 0
-# count_30 = 0
-# count_40 = 0
-#
+num = [10, 20, 20, 30, 30, 40]
+
+unique_numbers = []
+
+for i in range(len(num)):
+    if num[i] not in unique_numbers:  # Check if the number is not in unique_numbers
+        unique_numbers.append(num[i])  # Add to unique_numbers if it's not a duplicate
+
+
+print("List without duplicates:", unique_numbers)
+# It first checks if the index that refers to num at the time is in the list and if it is not it puts it into the list. So if there is a repeating it does not put it into the list.
+# 6. Find the Most Frequent Value in a List
+# Write a program to find the most frequent value and its count in a list.
+n = [10, 20, 20, 30, 30, 30, 40]
+
+count_10 = 0
+count_20 = 0
+count_30 = 0
+count_40 = 0
+counts = {}
+for num in n:
+    counts[num] = counts.get(num, 0) + 1
+
+
+most_frequent_value = max(counts, key=counts.get)
+max_count = counts[most_frequent_value]
+
+
+print(f"The most frequent value is {most_frequent_value} with a count of {max_count}.")
+# the counts.get(num,0) it makes the list start at zero and add 1 if the number wasnt already there to most frequent value
+# the max(counts, key=counts.get finds the number with the highest count
+# then they print
 # # Compare other numbers similarly
 # for num in n:
 #     if num == 10:
@@ -176,46 +203,54 @@ for i in range(len(numbers)):
 #
 # # 7. Merge Two Lists
 # # Write a program to merge two lists into one.
-# list1 = [1, 2, 3]
-# list2 = [4, 5, 6]
-# # edit combined_list
-# combined_list = []
-# # print("Combined list:", combined_list)
-# for item in list1:
-#     combined_list.append(item)
-#
-# for item in list2:
-#     combined_list.append(item)
-#
-# # Print the merged list
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+# edit combined_list
+combined_list = []
 # print("Combined list:", combined_list)
-#
+for item in list1:
+    combined_list.append(item)
+
+for item in list2:
+    combined_list.append(item)
+
+# # Print the merged list
+print("Combined list:", combined_list)
+#for the first loop it looks at every single numbers in list1 and appends it to combined_list.
+# for the second loop it looks at every single number in list2 and appends it to combined_lisst
+# then it prints it
 # # 8. Check if a List is in Ascending or Descending Order
 # # Write a program to check if a list is in ascending or descending order.
-# numbers = [10, 20, 30, 40, 50]
-# ascending = True
-# descending = True
-#
-# for i in range(len(numbers) - 1):
-#     if numbers[i] > numbers[i + 1]:
-#         ascending = False
-#     elif numbers[i] < numbers[i + 1]:
-#         descending = False
-#
-# if ascending:
-#     print("The list is in Ascending order")
-# elif descending:
-#     print("The list is in Descending order")
-# else:
-#     print("The list is Unordered")
+numbers = [10, 20, 30, 40, 50]
+ascending = True
+descending = True
+
+for i in range(len(numbers) - 1):
+    if numbers[i] > numbers[i + 1]:
+        ascending = False
+    elif numbers[i] < numbers[i + 1]:
+        descending = False
+
+if ascending:
+    print("The list is in Ascending order")
+elif descending:
+    print("The list is in Descending order")
+else:
+    print("The list is Unordered")
+#we first see if the list is assending by checking each of the indexs. If they are bigger tahan the next number put ascending to false
+# same with descending if the number is smaller than the next number, put descending at false
+# then print the result.
 # # 9. Sum of All Values in a List
 # # Write a program to find the sum of all values in a list.
 # # edit total
-# numbers = [1, 2, 3, 4, 5]
-# total = 0
-# # print("Sum of all values:", total)
-# for number in numbers:
-#     total += number
-#
-# # Print the sum of all values
-# print("Sum of all values:", total)
+numbers = [1, 2, 3, 4, 5]
+total = 0
+for num in numbers:
+    total += num
+
+# Print the total sum
+print("The sum of all values in the list is:", total)
+# the total first stays at zero
+# use the for loop to iterate through each number
+# Use the iterated values and add it to total
+# Finally print total
