@@ -12,14 +12,14 @@
 # print(num % 2 == 1)
 # x = int(input("Please enter the number: "))
 #
-# x=10
-# y =30
-# if x % 2 != 0 or x % 5 !=0:
-#     print("x is not good number")
-# # elif x % 5 != 0:
-# #     print("x is not good number")
-# else:
-#     print("x is a good number")
+x=10
+y =30
+if x % 2 != 0 or x % 5 !=0:
+    print("x is not good number")
+elif x % 5 != 0:
+    print("x is not good number")
+else:
+    print("x is a good number")
 #
 # x = 10
 # y = 30

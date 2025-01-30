@@ -9,11 +9,16 @@ even_numbers = []
 # let x is any number
 # x % 2 = 0, that means even
 # x % 2 = 1, that means odd
-for n in range(len(numbers)):
-    if numbers[n] % 2 == 0:
-        even_numbers.append(numbers[n])
-    else:
-        odd_numbers.append(numbers[n])
+for i in range(0, len(numbers)):
+    if numbers[i] % 2 ==0:
+        even_numbers.append(numbers[i])
+    elif numbers[i] % 2!=0:
+        odd_numbers.append(numbers[i])
+# for n in range(len(numbers)):
+#     if numbers[n] % 2 == 0:
+#         even_numbers.append(numbers[n])
+#     else:
+#         odd_numbers.append(numbers[n])
 # if numbers[0] % 2 == 0:
 #     even_numbers.append(numbers[0])
 # else:
@@ -50,16 +55,22 @@ max_num = numb[0]
 min_num = numb[0]
 
 # Compare the rest of the numbers similarly
+for i in range(1,len(numb)):
+    if numb[i] > max_num:
+        max_num = numb[i]
+    if numb[i] <  min_num:
+        min_num = numb[i]
+
 # for num in numb[1:]:
 #     if num > max_num:
 #         max_num = num
 #     if num < min_num:
 #         min_num = num
-for i in range(1, len(numb)):
-    if numb[i] > max_num:
-        max_num = numb[i]
-    if numb[i] < min_num:
-        min_num = numb[i]
+# for i in range(1, len(numb)):
+#     if numb[i] > max_num:
+#         max_num = numb[i]
+#     if numb[i] < min_num:
+#         min_num = numb[i]
 # if max_num < numbers[1]:
 #     max_num = numbers[1]
 # if min_num > numbers[1]:
@@ -84,18 +95,22 @@ print("Minimum value:", min_num)
 # Write a program to find a specific value in a list and print its index. If not found, print "Value not found".
 numbers = [10, 20, 30, 40, 50]
 value = 30
+if value in numbers:
+    print(numbers.index(value))
+else:
+    print("Value not found")
 # list[start:end+1]
 # range(start, end+1)
 # print(numbers[1:])
 # print(range(1,len(numbers)))
 # for i in range(1,len(numbers)):
 #     print(i)
-for i in range(len(numbers)):
-    if value == numbers[i]:
-        print("found")
-        break
-    if i == len(numbers) - 1:
-        print("value not found")
+# for i in range(len(numbers)):
+#     if value == numbers[i]:
+#         print("found")
+#         break
+#     if i == len(numbers) - 1:
+#         print("value not found")
 # if value in numbers:
 #     # If found, print the index of the value
 #     index = numbers.index(value)
@@ -111,11 +126,18 @@ number = [10, 20, 30, 40, 50]
 total = 0
 average = 0
 # Calculate the sum of the numbers
-for i in range(len(numbers)):
-    total += numbers[i]
+for i in range(len(number)):
+    total += number[i]
 
-if len(numbers) > 0:
-    average = total / len(numbers)
+average= total / len(numbers)
+
+
+
+# for i in range(len(numbers)):
+#     total += numbers[i]
+#
+# if len(numbers) > 0:
+#     average = total / len(numbers)
 # Before starting the loop you initialize both variable as 0 then after that the after that you go every single index. Then each time you go through an index you add the value to the total.
 # Then lastly you divide the total by the length of the numbers then you get the average.
 # Print the results
@@ -140,8 +162,8 @@ num = [10, 20, 20, 30, 30, 40]
 unique_numbers = []
 
 for i in range(len(num)):
-    if num[i] not in unique_numbers:  # Check if the number is not in unique_numbers
-        unique_numbers.append(num[i])  # Add to unique_numbers if it's not a duplicate
+    if num[i] not in unique_numbers:
+        unique_numbers.append(num[i])
 
 
 print("List without duplicates:", unique_numbers)
@@ -153,17 +175,17 @@ n = [10, 20, 20, 30, 30, 30, 40]
 count_10 = 0
 count_20 = 0
 count_30 = 0
-count_40 = 0
-counts = {}
-for num in n:
-    counts[num] = counts.get(num, 0) + 1
+
+# count_40 = 0
+# counts = {}
+# for num in n:
+#     counts[num] = counts.get(num, 0) + 1
+#
+# most_frequent_value = max(counts, key=counts.get)
+# max_count = counts[most_frequent_value]
 
 
-most_frequent_value = max(counts, key=counts.get)
-max_count = counts[most_frequent_value]
-
-
-print(f"The most frequent value is {most_frequent_value} with a count of {max_count}.")
+# print(f"The most frequent value is {most_frequent_value} with a count of {max_count}.")
 # the counts.get(num,0) it makes the list start at zero and add 1 if the number wasnt already there to most frequent value
 # the max(counts, key=counts.get finds the number with the highest count
 # then they print
@@ -207,10 +229,9 @@ list1 = [1, 2, 3]
 list2 = [4, 5, 6]
 # edit combined_list
 combined_list = []
-# print("Combined list:", combined_list)
+
 for item in list1:
     combined_list.append(item)
-
 for item in list2:
     combined_list.append(item)
 
@@ -224,13 +245,13 @@ print("Combined list:", combined_list)
 numbers = [10, 20, 30, 40, 50]
 ascending = True
 descending = True
-
+#
 for i in range(len(numbers) - 1):
     if numbers[i] > numbers[i + 1]:
         ascending = False
     elif numbers[i] < numbers[i + 1]:
         descending = False
-
+#
 if ascending:
     print("The list is in Ascending order")
 elif descending:
