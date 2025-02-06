@@ -9,7 +9,7 @@ even_numbers = []
 # let x is any number
 # x % 2 = 0, that means even
 # x % 2 = 1, that means odd
-for i in range(0, len(numbers)):
+for i in range( len(numbers)):
     if numbers[i] % 2 ==0:
         even_numbers.append(numbers[i])
     elif numbers[i] % 2!=0:
@@ -95,10 +95,23 @@ print("Minimum value:", min_num)
 # Write a program to find a specific value in a list and print its index. If not found, print "Value not found".
 numbers = [10, 20, 30, 40, 50]
 value = 30
-if value in numbers:
-    print(numbers.index(value))
-else:
-    print("Value not found")
+for number in range(len(numbers)):
+    if numbers[number] == value:
+        print(number)
+        break
+    if number  == len(numbers) - 1:
+        print("value not found")
+
+# if value in numbers:
+#     print(numbers.index(value))
+# else:
+#     print("Value not found")
+#
+# # from 1-100 print out only odd number using continue
+# for i in range(1,101):
+#     if i % 2 == 0:
+#         continue
+#     print(i)
 # list[start:end+1]
 # range(start, end+1)
 # print(numbers[1:])
