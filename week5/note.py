@@ -14,6 +14,7 @@ my_list = [10, 20, 30, 40, 50]
 # start = 0
 # end = 2
 # list[0:2+1]
+# range(start,end+1)
 x = 0
 x = x + 1
 # x = 0 + 1

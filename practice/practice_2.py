@@ -139,8 +139,11 @@ number = [10, 20, 30, 40, 50]
 total = 0
 average = 0
 # Calculate the sum of the numbers
-for i in range(len(number)):
-    total += number[i]
+for i in number:
+    # print("i is",i )
+    total += i
+    print("total is", total)
+    # total += number i]
 
 average= total / len(numbers)
 
@@ -173,7 +176,8 @@ print("Average:", average)
 num = [10, 20, 20, 30, 30, 40]
 
 unique_numbers = []
-
+# range(start,end+1)
+# range(4)=0,1,2,3
 for i in range(len(num)):
     if num[i] not in unique_numbers:
         unique_numbers.append(num[i])
