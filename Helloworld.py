@@ -8,19 +8,19 @@
 # #My name
 # print("I am 30 years old")
 # #Mistake of age
-import requests
+# import requests
+# #
+# def get_public_ip():
+#     try:
+#         response = requests.get('https://api.ipify.org?format=json')
+#         ip_data = response.json()
+#         return ip_data['ip']
+#     except requests.exceptions.RequestException as e:
+#         return f"Error: {e}"
 #
-def get_public_ip():
-    try:
-        response = requests.get('https://api.ipify.org?format=json')
-        ip_data = response.json()
-        return ip_data['ip']
-    except requests.exceptions.RequestException as e:
-        return f"Error: {e}"
-
-if __name__ == "__main__":
-    ip = get_public_ip()
-    print(f"Your public IP address is: {ip}")
+# if __name__ == "__main__":
+#     ip = get_public_ip()
+#     print(f"Your public IP address is: {ip}")
 # 1-100 count odd, even, divided by 3, and one which is even and divided by 3
 # odd numbers: #
 # even numbers: #
@@ -47,3 +47,32 @@ if __name__ == "__main__":
 #     if i % 6 ==0:
 #         mo3_even=mo3_even+1
 # print("mo3_even numbers",mo3_even)
+
+n = [10, 20, 20, 30, 30, 30, 40]
+
+count_10 = 0
+count_20 = 0
+count_30 = 0
+count_40 = 0
+#
+# print(n[0])
+# print(n[1])
+# print(n[2])
+# print(n[3])
+# print(n[4])
+# print(n[5])
+# # print(n[6])
+for num in n:
+    # print(num)
+    if num==10:
+        count_10 += 1
+    elif num==20:
+        count_20 += 1
+    elif num==30:
+        count_30 +=1
+    elif num==40:
+        count_40 += 1
+print("10 appears",count_10,"time" if count_10 < 2 else "times")
+print("20 appears",count_20,"time" if count_20 < 2 else "times")
+print("30 appears",count_30,"time" if count_30 < 2 else "times")
+print("40 appears",count_40,"time" if count_40 < 2 else "times")

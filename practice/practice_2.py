@@ -192,8 +192,12 @@ n = [10, 20, 20, 30, 30, 30, 40]
 count_10 = 0
 count_20 = 0
 count_30 = 0
+count_40 = 0
 
-# count_40 = 0
+x=[]
+
+
+
 # counts = {}
 # for num in n:
 #     counts[num] = counts.get(num, 0) + 1
