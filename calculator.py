@@ -36,12 +36,32 @@
 # Create a program that takes a sentence from the user
 # counts how many words it contains
 # and prints each word in reverse order.
-sentence = input("write your sentence: ")
-list = sentence.split(" ")
-print(list)
+# sentence = input("write your sentence: ")
+# list = sentence.split(" ")
+# print(list)
 # print(sentence.count(" ")+1)
-for i in range(len(list)):
-   print(list[(i + 1)*-1])
+# for i in range(len(list)):
+   # print(list[(i + 1)*-1])
 
-print(len(list))
+# print(len(list))
 # loop = n rule: loop 1 2 3 ... n - 1,  n
+list=[]
+# Create a program that asks the user for a list of numbers, then calculates and displays the sum, average, maximum, and minimum values.
+# First ask length,
+# Second input data
+# Last Sum,Average,Max,Min
+length=int(input("write the length: "))
+
+for i in range(length):
+   list.append(i)
+print(list)
+n = input("what is the data at: ")
+sum = sum(list)
+print("The sum is",sum)
+count = len(list)
+average = sum/count
+print ("The average is",average)
+max = max(list)
+print("the max is",max)
+min = min(list)
+print("The min is",min)
