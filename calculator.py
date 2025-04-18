@@ -100,12 +100,16 @@ person1 = person.copy()
 print(person1)
 # Create a simple address book program that allows users to add,
 # view, and delete contacts (name and phone number) using a dictionary
-person2 = {}
-name = input("enter name your name:")
-age = input("enter your age:")
-person2["name"]=name
-person2["age"]=age
-print("Current data:",person2)
-delete = input("Delete 'name' or 'age':")
-person2.pop(delete)
-print("Updated data:", person2)
+contact = []
+for i in range(3):
+   person2 = {}
+   name = input("enter name your name:")
+   age = input("enter your age:")
+   person2["name"]=name
+   person2["age"]=age
+   print("Current data:",person2)
+   delete = input("Delete 'name' or 'age':")
+   person2.pop(delete)
+   print("Updated data:", person2)
+   contact.append(person2)
+   print (contact)
