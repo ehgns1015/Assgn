@@ -9,11 +9,18 @@ even_numbers = []
 # let x is any number
 # x % 2 = 0, that means even
 # x % 2 = 1, that means odd
-for i in range( len(numbers)):
-    if numbers[i] % 2 ==0:
+# for i in range( len(numbers)):
+#     if numbers[i] % 2 ==0:
+#         even_numbers.append(numbers[i])
+#     elif numbers[i] % 2!=0:
+#         odd_numbers.append(numbers[i])
+i = 0
+while i < len(numbers):
+    if numbers[i] % 2 == 0:
         even_numbers.append(numbers[i])
-    elif numbers[i] % 2!=0:
+    else:
         odd_numbers.append(numbers[i])
+    i += 1
 # for n in range(len(numbers)):
 #     if numbers[n] % 2 == 0:
 #         even_numbers.append(numbers[n])
@@ -54,12 +61,19 @@ numb = [10, 20, 30, 40, 50]
 max_num = numb[0]
 min_num = numb[0]
 
-# Compare the rest of the numbers similarly
-for i in range(1,len(numb)):
+# # Compare the rest of the numbers similarly
+# for i in range(1,len(numb)):
+#     if numb[i] > max_num:
+#         max_num = numb[i]
+#     if numb[i] <  min_num:
+#         min_num = numb[i]
+i = 1
+while i < len(numb):
     if numb[i] > max_num:
         max_num = numb[i]
-    if numb[i] <  min_num:
+    if numb[i] < min_num:
         min_num = numb[i]
+    i += 1
 
 # for num in numb[1:]:
 #     if num > max_num:
@@ -95,13 +109,20 @@ print("Minimum value:", min_num)
 # Write a program to find a specific value in a list and print its index. If not found, print "Value not found".
 numbers = [10, 20, 30, 40, 50]
 value = 30
-for number in range(len(numbers)):
+# for number in range(len(numbers)):
+#     if numbers[number] == value:
+#         print(number)
+#         break
+#     if number  == len(numbers) - 1:
+#         print("value not found")
+number = 0
+while number < len(numbers):
     if numbers[number] == value:
         print(number)
         break
-    if number  == len(numbers) - 1:
+    if number == len(numbers) - 1:
         print("value not found")
-
+    number += 1
 # if value in numbers:
 #     print(numbers.index(value))
 # else:
@@ -139,13 +160,25 @@ number = [10, 20, 30, 40, 50]
 total = 0
 average = 0
 # Calculate the sum of the numbers
-for i in number:
-    # print("i is",i )
-    total += i
-    print("total is", total)
-    # total += number i]
+# for i in number:
+#     # print("i is",i )
+#     total += i
+#     print("total is", total)
+#     # total += number i]
+#
+# average= total / len(numbers)
+number = [10, 20, 30, 40, 50]
+total = 0
+average = 0
 
-average= total / len(numbers)
+i = 0
+while i < len(number):
+    total += number[i]
+    print("total is", total)
+    i += 1
+
+average = total / len(number)
+print("average is", average)
 
 
 
@@ -178,10 +211,20 @@ num = [10, 20, 20, 30, 30, 40]
 unique_numbers = []
 # range(start,end+1)
 # range(4)=0,1,2,3
-for i in range(len(num)):
+# for i in range(len(num)):
+#     if num[i] not in unique_numbers:
+#         unique_numbers.append(num[i])
+#
+#
+# print("List without duplicates:", unique_numbers)
+num = [10, 20, 20, 30, 30, 40]
+unique_numbers = []
+
+i = 0
+while i < len(num):
     if num[i] not in unique_numbers:
         unique_numbers.append(num[i])
-
+    i += 1
 
 print("List without duplicates:", unique_numbers)
 # It first checks if the index that refers to num at the time is in the list and if it is not it puts it into the list. So if there is a repeating it does not put it into the list.
@@ -198,13 +241,26 @@ x=[]
 
 
 
-# counts = {}
+counts = {}
 # for num in n:
 #     counts[num] = counts.get(num, 0) + 1
 #
 # most_frequent_value = max(counts, key=counts.get)
 # max_count = counts[most_frequent_value]
+# n = [10, 20, 20, 30, 30, 30, 40]
 
+counts = {}
+i = 0
+while i < len(n):
+    num = n[i]
+    counts[num] = counts.get(num, 0) + 1
+    i += 1
+
+most_frequent_value = max(counts, key=counts.get)
+max_count = counts[most_frequent_value]
+
+print("Most frequent value:", most_frequent_value)
+print("Count:", max_count)
 
 # print(f"The most frequent value is {most_frequent_value} with a count of {max_count}.")
 # the counts.get(num,0) it makes the list start at zero and add 1 if the number wasnt already there to most frequent value
@@ -251,11 +307,20 @@ list2 = [4, 5, 6]
 # edit combined_list
 combined_list = []
 
-for item in list1:
-    combined_list.append(item)
-for item in list2:
-    combined_list.append(item)
-
+# for item in list1:
+#     combined_list.append(item)
+# for item in list2:
+#     combined_list.append(item)
+# list1 = [1, 2, 3]
+# list2 = [4, 5, 6]
+i = 0
+while i < len(list1):
+    combined_list.append(list1[i])
+    i += 1
+j = 0
+while j < len(list2):
+    combined_list.append(list2[j])
+    j += 1
 # # Print the merged list
 print("Combined list:", combined_list)
 #for the first loop it looks at every single numbers in list1 and appends it to combined_list.
@@ -266,19 +331,34 @@ print("Combined list:", combined_list)
 numbers = [10, 20, 30, 40, 50]
 ascending = True
 descending = True
-#
-for i in range(len(numbers) - 1):
+# #
+# for i in range(len(numbers) - 1):
+#     if numbers[i] > numbers[i + 1]:
+#         ascending = False
+#     elif numbers[i] < numbers[i + 1]:
+#         descending = False
+# #
+# if ascending:
+#     print("The list is in Ascending order")
+# elif descending:
+#     print("The list is in Descending order")
+# else:
+#     print("The list is Unordered")
+i = 0
+while i < len(numbers) - 1:
     if numbers[i] > numbers[i + 1]:
         ascending = False
     elif numbers[i] < numbers[i + 1]:
         descending = False
-#
+    i += 1
+
 if ascending:
     print("The list is in Ascending order")
 elif descending:
     print("The list is in Descending order")
 else:
     print("The list is Unordered")
+
 #we first see if the list is assending by checking each of the indexs. If they are bigger tahan the next number put ascending to false
 # same with descending if the number is smaller than the next number, put descending at false
 # then print the result.
@@ -287,9 +367,12 @@ else:
 # # edit total
 numbers = [1, 2, 3, 4, 5]
 total = 0
-for num in numbers:
-    total += num
-
+# for num in numbers:
+#     total += num
+i = 0
+while i < len(numbers):
+    total += numbers[i]
+    i += 1
 # Print the total sum
 print("The sum of all values in the list is:", total)
 # the total first stays at zero
